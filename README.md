@@ -53,7 +53,7 @@ To use ZFDebug with Composer, add the following to the require list in your
 project's composer.json file:
 
 	"require": {
-	    "rubao/zfdebug": "1.0"
+	    "rubao/zfdebug": "1.7.1"
 	},
 
 Run the install command to resolve and download the dependencies:
