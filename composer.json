@@ -1,6 +1,6 @@
 {
     "name": "rubao/zfdebug",
-    "description": "ZFDebug is a plugin for the Zend Framework for PHP5, providing useful debug information displayed in a small bar at the bottom of every page.",
+    "description": "ZFDebug Fork with some changes.",
     "type": "library",
     "license": "BSD-3-Clause",
     "autoload": {
