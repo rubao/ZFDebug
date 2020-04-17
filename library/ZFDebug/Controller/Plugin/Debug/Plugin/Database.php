@@ -107,6 +107,7 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Database extends ZFDebug_Controller
         }
         foreach ($this->db as $adapter) {
             $profiler = $adapter->getProfiler();
+            if($profiler->getTotalNumQueries() < 1) continue;
             $adapterInfo[] = $profiler->getTotalNumQueries() . ' in '
                            . round($profiler->getTotalElapsedSecs()*1000, 2) . ' ms';
         }
