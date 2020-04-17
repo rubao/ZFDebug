@@ -64,7 +64,12 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Database extends ZFDebug_Controller
         } else {
             foreach ($options['adapter'] as $name => $adapter) {
                 if ($adapter instanceof Zend_Db_Adapter_Abstract) {
-                    $adapter->getProfiler()->setEnabled(true);
+                    if (isset($options['backtrace']) && $options['backtrace']) {
+                        $this->backtrace = true;
+                        $adapter->setProfiler(new ZFDebug_Db_Profiler(true));
+                    }else{
+                        $adapter->getProfiler()->setEnabled(true);
+                    }
                     $this->db[$name] = $adapter;
                 }
             }
