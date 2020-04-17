@@ -27,7 +27,7 @@ class ZFDebug_Db_ZendDbProfiler extends Zend\Db\Adapter\Profiler\Profiler
         $trace = array_filter(
             $trace,
             function ($t) {
-                return strstr($t['file'], 'application/') !== false;
+                return strstr($t['file'], '/vendor/') === false;
             }
         );
         $trace = array_values($trace);
