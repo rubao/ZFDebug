@@ -116,6 +116,9 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Database extends ZFDebug_Controller
             $adapterInfo[] = $profiler->getTotalNumQueries() . ' in '
                            . round($profiler->getTotalElapsedSecs()*1000, 2) . ' ms';
         }
+        if(empty($adapterInfo)) {
+            return 'No queries';
+        }
         $html = implode(' / ', $adapterInfo);
 
         return $html;
